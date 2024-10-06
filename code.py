@@ -21,6 +21,17 @@ print("\nSecond derivative V''(φ):",V_double_prime)
 print("\nSlow-roll parameter ε(φ):",epsilon)
 print("\nSlow-roll parameter η(φ):",eta)
 
+
+# Define the slow-roll parameters n, alpha and r
+n = 1 - 6 * epsilon + 2 * eta
+print("\nValue of n is:",n)
+
+alpha = 16 * epsilon * eta - 24 * epsilon**2
+print("\nValue of α is:",alpha)
+
+r = 16 * epsilon
+print("\nValue of r is:",r)
+
 # Lambda functions for numerical evaluation
 V_func = sp.lambdify([phi, m], V, 'numpy')
 V_prime_func = sp.lambdify([phi, m], V_prime, 'numpy')
@@ -66,5 +77,3 @@ plt.ylabel(r'$\eta(\phi)$', fontsize=14)
 plt.grid(True)
 plt.legend()
 plt.show()
-
-
